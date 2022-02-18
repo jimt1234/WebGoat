@@ -28,8 +28,9 @@ jobs:
           config: >- # more at semgrep.dev/explore
             p/security-audit
             p/secrets
-            p/java
-            p/javascript
+            p/owasp-top-ten
+      - name: Inspect report file
+        run: cat semgrep.sarif
 
         # == Optional settings in the `with:` block
 
