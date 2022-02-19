@@ -32,17 +32,16 @@ jobs:
       - uses: returntocorp/semgrep-action@v1
         with:
           generateSarif: "1"
-          config: >- # more at semgrep.dev/explore
-            p/security-audit
-            p/secrets
-            p/owasp-top-ten
+          config: p/secrets
             
       - name: "list"
+        if: always()
         run: |
           ls -la
 
 # Upload findings to GitHub Advanced Security Dashboard [step 2/2]
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
+        if: always()
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: semgrep.sarif
