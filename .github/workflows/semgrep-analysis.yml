@@ -38,6 +38,11 @@ jobs:
         if: always()
         run: |
           ls -la
+          
+      - name: "cat"
+        if: always()
+        run: |
+          jq . semgrep.sarif
 
 # Upload findings to GitHub Advanced Security Dashboard [step 2/2]
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
