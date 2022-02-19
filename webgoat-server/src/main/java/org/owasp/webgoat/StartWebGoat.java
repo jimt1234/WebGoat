@@ -44,7 +44,7 @@ import org.springframework.util.StringUtils;
 public class StartWebGoat extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        log.info("Starting WebGoat with args: {}", StringUtils.arrayToCommaDelimitedString(args));
+        log.info("Starting WebGoat with args password: {}", StringUtils.arrayToCommaDelimitedString(args));
         System.setProperty("spring.config.name", "application-webgoat");
         SpringApplication.run(StartWebGoat.class, args);
     }
